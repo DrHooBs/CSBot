@@ -1,8 +1,8 @@
-# CSBot
+# Classcharts-Daily-Discord
 
   
 
-CSBot is a discord bot designed to be run once a day to fetch classcharts assignments. I created this as the lack of notifications and reminders from the classcharts app frustrated me. As many of my peers also use discord this was a suitable solution
+Classcharts-Daily-Discord is a utility designed to be run once a day to fetch classcharts assignments and send them to a user on discord. I created this as the lack of notifications and reminders from the classcharts app frustrated me. As many of my peers also use discord this was a suitable solution
 
   
 
