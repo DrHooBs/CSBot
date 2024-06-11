@@ -1,10 +1,5 @@
 import { StudentClient } from "classcharts-api";
 
-/*
-const studentInfo = await client.getStudentInfo();
-console.log(studentInfo);
-*/
-
 // Get today's date
 function todayIs() {
     let today = new Date();
@@ -26,21 +21,24 @@ function nextWeekIs() {
 }
 
 export async function getHomeworks ( id, dob ) {
-// Date of birth MUST be in the format DD/MM/YYYY
+    //Create client instance with access code and date of birth
     const client = new StudentClient(id, dob);
     await client.login();
 
     var today = todayIs();
     var nextWeek = nextWeekIs();
 
+    //Request homework data between today and next week. Returns an object with the homework data
     const homeworks = await client.getHomeworks({
         from: today,
         to: nextWeek,
         isplayDate: 'due_date' // Can be 'due_date' or 'issue_date'
     });
 
+    //Initialise an array to store the relevant assignment details
     let assignmentDetails = [];
 
+    //Iterate through the homework data and push the relevant details to the array. 
     for (const key in homeworks.data) {
         assignmentDetails.push({
             title: homeworks.data[key].title,
