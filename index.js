@@ -20,6 +20,7 @@ client.on('ready', async () => {
         })
         
         .setColor("#3f7840");
+        if (assignmentDict.length != 0) {
         for (const key in assignmentDict) {
             embed.addFields(
                 {
@@ -27,9 +28,15 @@ client.on('ready', async () => {
                   value: `Teacher:${assignmentDict[key].teacher}\nDue Date:<t:${Math.round(assignmentDict[key].due_date / 1000)}:R>\nDescription: ${assignmentDict[key].description}`,
                   inline: false
                 })
-        }
+        }} else {
+            embed.addFields({
+                name: "No Assignments, Congrats 😼",
+                value: "Check back tomorrow.",
+                inline: false
+            })}
         
         await user.send({ embeds: [embed] });
+
     } catch (error) {
         console.error('Error fetching user or sending message:', error);
         } finally {process.exit();}
