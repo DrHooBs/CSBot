@@ -22,7 +22,7 @@ client.on('ready', async () => {
     const assignmentDict = await getHomeworks(classchartsID, classchartsDOB);
 
     //Create a timestamp for the due date
-    const CDStamp = (timestamp = assignmentDict[key].due_date) => `<t:${Math.round(timestamp / 1000)}:R>`;
+    //const CDStamp = (timestamp = assignmentDict[key].due_date) => `<t:${Math.round(timestamp / 1000)}:R>`;
 
     //Create an embed with the assignment data
     const embed = new EmbedBuilder()
